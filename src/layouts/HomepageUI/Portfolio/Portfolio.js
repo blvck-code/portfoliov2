@@ -27,7 +27,7 @@ function Portfolio() {
         }}>
         <div className="front">
           {latest ? <span>New</span> : ""}
-          <img data-src={img} alt="Project Img" />
+          <img src={img} alt="Project Img" />
           <Link to="/">
             <h3>{title}</h3>
           </Link>
@@ -124,7 +124,6 @@ function Portfolio() {
         }
         entry.target.classList.add("visible");
         const img = entry.target.querySelector(".front").childNodes[1];
-        preloadImg(img);
 
         // project.forEach((item) => {
         //   observer.unobserve(item);
