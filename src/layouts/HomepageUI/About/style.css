@@ -1,0 +1,191 @@
+.about {
+  background: #bdb7ce;
+}
+
+.about__wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .about__wrapper {
+    grid-template-columns: 1fr;
+    width: 90% !important;
+    margin: 0 auto;
+  }
+
+  .about__detail p {
+    font-size: 16px !important;
+  }
+}
+
+.about__detail p {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 1rem 0;
+}
+
+.about__img {
+  /* border: 1px solid red; */
+  padding: 0 3rem;
+  position: relative;
+}
+
+.about__img img {
+  object-fit: cover;
+  margin: auto;
+  border-radius: 5px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  height: 100%;
+  width: 100%;
+  filter: grayscale(40%);
+  transition: all 500ms ease-in;
+}
+
+.about__img img:hover {
+  top: 0;
+  left: 0;
+  filter: grayscale(0%);
+}
+.img__border:hover .about__img img {
+  top: 0;
+  left: 0;
+  filter: grayscale(0%);
+}
+
+.img__border {
+  border: 2px solid #310259;
+  border-radius: 5px;
+  position: relative;
+  height: 270px;
+  width: 270px;
+}
+
+.expe__item span {
+  font-size: 14px;
+  margin: 0.5rem 0;
+}
+
+.expe__item h2 {
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.expe__item p {
+  font-size: 15.5px;
+  font-weight: 400;
+  margin: 1rem 0;
+  font-family: sans-serif;
+}
+
+.about__intro {
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 500ms ease-in;
+}
+
+.about__intro.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.about__stats {
+  margin: 2rem 0;
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+.skill__title {
+  display: flex;
+  /* border: 1px solid #fff; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill__name {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: "Oswald", sans-serif;
+}
+
+.skill_percent {
+  color: #310259;
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+}
+
+.progress {
+  height: 3px;
+  margin: 1rem 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  position: relative;
+  transition: all 500ms ease-in;
+}
+
+.about__detail a {
+  color: #7c06e4;
+  font-weight: 500;
+  position: relative;
+}
+
+.about__detail a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #7c06e4;
+  transition: all 250ms ease-in;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.about__detail a:hover::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.progress .progress__bar {
+  position: absolute;
+  transition: all 500ms ease-in;
+  top: 4;
+  left: 0;
+  height: 3px;
+  border-radius: 2px;
+  z-index: 5;
+  background: #310259;
+}
+
+.about__stats {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.skill__item {
+  transform: scale(0);
+  opacity: 0;
+  transition: all 1s ease-in;
+}
+
+.skill__item.visible {
+  transform: scale(1);
+  opacity: 1;
+}

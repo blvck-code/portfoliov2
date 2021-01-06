@@ -1,0 +1,30 @@
+.scroll {
+  position: fixed;
+  right: 30px;
+  opacity: 0;
+  bottom: 110px;
+  width: 50px !important;
+  height: 50px !important;
+  z-index: 99;
+  transition: all 2s ease-in;
+  /* border: 1px solid red; */
+}
+
+.scroll.visible {
+  opacity: 1;
+}
+
+.scroll img {
+  width: 50px !important;
+  height: 50px !important;
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

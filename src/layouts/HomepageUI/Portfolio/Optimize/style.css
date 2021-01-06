@@ -1,0 +1,117 @@
+.optimize {
+  background: #bdb7ce;
+}
+
+.optimize__wrapper {
+  max-width: 1100px;
+  margin: 0rem auto;
+  padding: 4rem 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  grid-gap: 60px;
+}
+
+@media (min-width: 700px) {
+  .optimize__wrapper {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+}
+@media (min-width: 1000px) {
+  .optimize__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .optimize__wrapper {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+}
+
+.optimize__title {
+  /* border: 1px solid red; */
+}
+
+.optimize__title h2 {
+  color: #221c33;
+  font-size: 2.6rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.optimize__title p {
+  color: #221c33 !important;
+  font-size: 17px;
+  margin: 0.5rem 0;
+}
+
+.optimize__title span {
+  color: #221c33;
+  /* letter-spacing: 1px; */
+  font-weight: 700;
+}
+
+.optimize__percents {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.optimize__percent {
+  margin: 1rem 0 0rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.optimize__percent h1 {
+  font-size: 5rem;
+  color: #7c06e4;
+  margin: 0;
+  display: flex;
+  position: relative;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.optimize__percent span {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.optimize__percent p {
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: 500;
+  color: #221c33;
+  /* margin-top: -10px; */
+}
+
+.optimize__info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.optimize__info svg {
+  font-size: 4rem;
+  border: 1px solid #221c33;
+  padding: 5px;
+  border-radius: 25px;
+}
+
+.optimize__item {
+  /* border: 1px solid red; */
+  width: 100%;
+}
+
+.optimize__item h4 {
+  color: #7c06e4;
+  margin: 0.5rem 0;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+}

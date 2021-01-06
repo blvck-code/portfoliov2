@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  /* background: linear-gradient(135deg, #17161a 0%, #000 100%); */
+  position: relative;
+  /* cursor: none; */
+  font-family: "Quicksand", sans-serif;
+  overflow-x: hidden !important;
+  /* background: #000; */
+}
+
+header {
+  min-height: 100vh;
+  position: relative;
+}
+
+section {
+  min-height: 80vh;
+  height: auto;
+  border: 1px solid transparent;
+  padding: 2rem 0;
+  position: relative;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#showcase {
+  /* background: chartreuse; */
+  background: linear-gradient(135deg, #001, #000) !important;
+  position: relative;
+}
+
+#about {
+  transition: all 2s ease;
+  /* background: lime; */
+  position: relative;
+}
+
+p {
+  font-family: "Quicksand" sans-serif;
+  font-size: 17px;
+}
+
+/* #resume {
+  background: yellow;
+}
+
+#services {
+  background: green;
+}
+
+#portfolio {
+  background: greenyellow;
+}
+
+#testimonial {
+  background: lime;
+}
+
+#contact {
+  background: red;
+} */

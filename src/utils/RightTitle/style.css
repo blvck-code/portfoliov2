@@ -1,0 +1,21 @@
+.secondary-title {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* height: 100%; */
+  width: 110px;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondary-title h1 {
+  transform: rotate(90deg);
+  text-transform: uppercase;
+  color: transparent;
+  font-size: 5.5rem;
+  letter-spacing: 3px;
+  -webkit-text-stroke: 1px #000;
+}

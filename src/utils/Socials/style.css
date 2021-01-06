@@ -1,0 +1,44 @@
+.socials {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 888;
+  width: 50px;
+}
+
+@media (max-width: 900px) {
+  .socials {
+    display: none;
+  }
+}
+
+.socials__wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.socials__wrapper .fa {
+  color: #fff;
+  /* color: #221c33; */
+  font-size: 1.5rem;
+  margin: 0.7rem 0;
+  transition: all 500ms ease-in;
+  cursor: pointer;
+  mix-blend-mode: difference !important;
+}
+
+.socials__wrapper .fa:hover {
+  transform: translateY(-10px);
+  color: #7c06e4;
+}
+
+.line {
+  height: 105px;
+  width: 2px;
+  background: #7c06e4;
+}
