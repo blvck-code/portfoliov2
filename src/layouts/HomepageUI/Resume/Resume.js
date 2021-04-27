@@ -44,65 +44,56 @@ function Resume() {
   const experience = [
     {
       id: "01",
-      date: "2011 - 2014",
-      job: "UI Designer",
-      firm: "Google Corporation.",
-      desc: `All you need to do, is 
-      your best work together one 
-      package works among seamlessly 
-      in computer daily`,
+      date: "2020 - PRESENT",
+      job: "Backend Dev",
+      firm: "Upwork",
+      desc: `Worked with my campus 
+      collegue where my main role 
+      was creating Restful APIs for 
+      the frontend.`,
     },
     {
       id: "02",
-      date: "2011 - 2014",
-      job: "UI Designer",
-      firm: "Apple Production",
-      desc: `All you need to do, is 
-      your best work together one 
-      package works among seamlessly 
-      in computer daily`,
+      date: "2018 - 2020",
+      job: "Attachee",
+      firm: "Siaya District Hospital",
+      desc: `Worked with other attachee in 
+      the ICT department where most of the roles
+      were networking & troubleshooting computers.
+      `,
     },
     {
       id: "03",
-      date: "2011 - 2014",
-      job: "UI Designer",
-      firm: "Leam Designer Music.",
-      desc: `All you need to do, is 
-      your best work together one 
-      package works among seamlessly 
-      in computer daily`,
+      date: "2017 - 2019",
+      job: "Frontend Dev",
+      firm: "Upwork",
+      desc: `I worked independently where i built 
+      frontend for my Upwork clients mainly with 
+      React.js, HTML, SASS & Vanilla js.`,
     },
     {
-      id: "01",
-      date: "2011 - 2014",
-      job: "UI Designer",
-      firm: "Google Corporation.",
-      desc: `All you need to do, is 
-      your best work together one 
-      package works among seamlessly 
-      in computer daily`,
+      id: "04",
+      date: "2016 - 2020",
+      job: "Photographer",
+      firm: "Taita Taveta University.",
+      desc: `I was a photographer back in campus 
+      which was my main hustle as a student.`,
     },
     {
-      id: "02",
-      date: "2011 - 2014",
-      job: "UI Designer",
-      firm: "Apple Production",
-      desc: `All you need to do, is 
-      your best work together one 
-      package works among seamlessly 
-      in computer daily`,
-    },
-    {
-      id: "03",
-      date: "2011 - 2014",
-      job: "UI Designer",
-      firm: "Leam Designer Music.",
-      desc: `All you need to do, is 
-      your best work together one 
-      package works among seamlessly 
-      in computer daily`,
+      id: "05",
+      date: "2016 - 2018",
+      job: "Freelancer",
+      firm: "Upwork.",
+      desc: `Worked as a part-time freelancer where 
+      i did assignments and homework for for Upwork 
+      clients.`,
     },
   ];
+
+  const date = new Date();
+  const year = date.getFullYear();
+
+  const expe = year - 2016;
 
   return (
     <section id="resume">
@@ -111,7 +102,7 @@ function Resume() {
           <Title
             theme="title"
             title="Experience &amp; Education"
-            subtitle="45+ years of experience"
+            subtitle={`${expe}+ years of experience`}
             category="resume"
           />
         </>

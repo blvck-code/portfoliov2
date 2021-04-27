@@ -6,6 +6,8 @@ import Responsive from "./Responsive/Responsive";
 import { motion } from "framer-motion";
 import Design from "./Design/Design";
 import { myProjects, categories } from "../../../data/data";
+import img1 from "../../../assets/imgs/proj1.jpg";
+import img2 from "../../../assets/imgs/proj2.jpg";
 import "./style.css";
 import Optimize from "./Optimize/Optimize";
 
@@ -15,6 +17,12 @@ function Portfolio() {
   const [category, setCatergory] = useState("");
   const [projects, setProjects] = useState(null);
 
+  const currentProj = (e) => {
+    const target = e.target.parentNode.parentNode;
+    target.offsetTop = 0;
+    console.log(target);
+  };
+
   const displayProjects = (items) => {
     return items?.map(({ img, title, latest, categories, desc }, idx) => (
       <motion.div
@@ -23,11 +31,10 @@ function Portfolio() {
         id="project"
         style={{
           transition: `all 2s ease`,
-          // animationDelay: `${idx}s`,
         }}>
         <div className="front">
           {latest ? <span>New</span> : ""}
-          <img data-src={img} alt="Project Img" />
+          <img src={img} alt="Project Img" />
           <Link to="/">
             <h3>{title}</h3>
           </Link>
@@ -39,19 +46,10 @@ function Portfolio() {
         </div>
         <div className="background"></div>
         <div className="back">
-          <div className="back-header">
-            <div className="back__type">
-              <h5>Type</h5>
-              <p>Frontend</p>
-            </div>
-            <div className="back__date">
-              <h5>Client</h5>
-              <p>Kababa Hotel</p>
-            </div>
-          </div>
           <p className="back-desc">
             A full stack all around, designer that may or may not include a
-            guide.
+            guide. A full stack all around, designer that may or may not include
+            a guide.
           </p>
           <div className="back-footer">
             <Link to="/">Visit Site</Link>
@@ -96,6 +94,7 @@ function Portfolio() {
         if (!entry.isIntersecting) {
           return;
         }
+        console.log(entry);
         setVisible2(entry.isIntersecting);
       });
     }, options);
@@ -103,14 +102,14 @@ function Portfolio() {
     observer.observe(wrapper);
   }, [visible]);
 
-  const preloadImg = (img) => {
-    const src = img.getAttribute("data-src");
+  // const preloadImg = (img) => {
+  //   const src = img.getAttribute("data-src");
 
-    if (!src) {
-      return;
-    }
-    img.src = src;
-  };
+  //   if (!src) {
+  //     return;
+  //   }
+  //   img.src = src;
+  // };
 
   useEffect(() => {
     const options = { rootMargin: "-150px" };
@@ -122,13 +121,15 @@ function Portfolio() {
         if (!entry.isIntersecting) {
           return;
         }
-        entry.target.classList.add("visible");
-        const img = entry.target.querySelector(".front").childNodes[1];
-        preloadImg(img);
 
-        // project.forEach((item) => {
-        //   observer.unobserve(item);
-        // });
+        console.log(entry);
+        entry.target.classList.add("visible");
+        // const img = entry.target.querySelector(".front").childNodes[1];
+        // preloadImg(img);
+
+        project.forEach((item) => {
+          observer.unobserve(item);
+        });
       });
     }, options);
 
@@ -140,8 +141,6 @@ function Portfolio() {
   const date = new Date();
   const hour = date.getHours();
   const night = hour >= 16 || hour <= 7;
-
-  // console.log(night);
 
   const setActive = (e) => {
     document.querySelectorAll(".categry__item").forEach((item) => {
@@ -196,12 +195,11 @@ function Portfolio() {
         <div className="projects">
           {category === "all"
             ? displayProjects(myProjects)
-            : displayProjects(projects)}
+            : displayProjects(myProjects)}
         </div>
       </div>
       <Optimize />
-      {/* <Responsive /> */}
-      <Design />
+      {/* <Design /> */}
     </section>
   );
 }

@@ -15,7 +15,6 @@ function Preloader() {
           return;
         }
         // .innerHTML(count + "%");
-        console.log(preloader);
         count++;
       } else {
         clearInterval(counter);
