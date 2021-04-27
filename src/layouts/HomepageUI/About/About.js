@@ -142,19 +142,17 @@ function About() {
 
         <div className="about__stats">
           {skills?.map(({ name, percent }, idx) => (
-            <>
-              <motion.div key={idx} className="skill__item">
-                <div className="skill__title">
-                  <span className="skill__name">{name}</span>
-                  <span className="skill_percent">{percent}%</span>
-                </div>
-                <div className="progress">
-                  <span
-                    className="progress__bar"
-                    style={{ width: `${percent}%` }}></span>
-                </div>
-              </motion.div>
-            </>
+            <motion.div key={idx} className="skill__item">
+              <div className="skill__title">
+                <span className="skill__name">{name}</span>
+                <span className="skill_percent">{percent}%</span>
+              </div>
+              <div className="progress">
+                <span
+                  className="progress__bar"
+                  style={{ width: `${percent}%` }}></span>
+              </div>
+            </motion.div>
           ))}
         </div>
       </section>

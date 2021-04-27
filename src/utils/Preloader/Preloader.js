@@ -14,7 +14,7 @@ function Preloader() {
         } else {
           return;
         }
-        // .innerHTML(count + "%");
+        // .innerHTML(count + "%")
         count++;
       } else {
         clearInterval(counter);

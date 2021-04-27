@@ -26,6 +26,14 @@ footer p {
   margin: 3px 0;
 }
 
+footer p span {
+  font-size: 12px;
+  color: #fff;
+  margin: 0 5px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
 footer .fa {
   color: #310259;
   font-size: 1.5rem;

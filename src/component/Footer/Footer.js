@@ -5,7 +5,7 @@ import logo from "../../assets/imgs/logo.jpg";
 function Footer() {
   const year = new Date().getFullYear();
   const texts = [
-    "you code like a pro, you become a pro.",
+    "go deep, not wide",
     "geniouses are not born, they are self-made",
     "imagination is greater than knowledge",
     "do more",
@@ -62,7 +62,10 @@ function Footer() {
           <img src={logo} alt="Oluoch" />
           {/* <h5><span>O</span>louch</h5> */}
         </div>
-        <p>&copy;{year}, Design and Built by Oluoch Maurice Brian.</p>
+        <p>
+          &copy;{year}, Design and Built by Oluoch Maurice Brian
+          <span>(Dream Chaser)</span>.
+        </p>
         <small className="motives"></small>
       </div>
     </footer>

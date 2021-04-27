@@ -6,8 +6,6 @@ import Responsive from "./Responsive/Responsive";
 import { motion } from "framer-motion";
 import Design from "./Design/Design";
 import { myProjects, categories } from "../../../data/data";
-import img1 from "../../../assets/imgs/proj1.jpg";
-import img2 from "../../../assets/imgs/proj2.jpg";
 import "./style.css";
 import Optimize from "./Optimize/Optimize";
 
@@ -17,47 +15,57 @@ function Portfolio() {
   const [category, setCatergory] = useState("");
   const [projects, setProjects] = useState(null);
 
-  const currentProj = (e) => {
-    const target = e.target.parentNode.parentNode;
-    target.offsetTop = 0;
-    console.log(target);
-  };
-
   const displayProjects = (items) => {
-    return items?.map(({ img, title, latest, categories, desc }, idx) => (
-      <motion.div
-        key={idx}
-        className="project project__item"
-        id="project"
-        style={{
-          transition: `all 2s ease`,
-        }}>
-        <div className="front">
-          {latest ? <span>New</span> : ""}
-          <img src={img} alt="Project Img" />
-          <Link to="/">
-            <h3>{title}</h3>
-          </Link>
-          <ul>
-            {desc?.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="background"></div>
-        <div className="back">
-          <p className="back-desc">
-            A full stack all around, designer that may or may not include a
-            guide. A full stack all around, designer that may or may not include
-            a guide.
-          </p>
-          <div className="back-footer">
-            <Link to="/">Visit Site</Link>
-            <Link to="/">Source Code</Link>
+    return items?.map(
+      (
+        { image, title, latest, tools, categories, desc, github, link },
+        idx
+      ) => (
+        <motion.div
+          key={idx}
+          className="project project__item"
+          id="project"
+          style={{
+            transition: `all 2s ease`,
+            // animationDelay: `${idx}s`,
+          }}>
+          <div className="front">
+            {latest ? <span>New</span> : ""}
+            <img data-src={image} alt={title} />
+            <small>{idx + 1}</small>
+            {link ? (
+              <a href={link} target="_blank">
+                <h3>{title}</h3>
+              </a>
+            ) : (
+              <h3>{title}</h3>
+            )}
+
+            <ul>
+              {tools?.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
           </div>
-        </div>
-      </motion.div>
-    ));
+          <div className="background"></div>
+          <div className="back">
+            <p className="back-desc">{desc}</p>
+            <div className="back-footer">
+              {link && (
+                <a href={link} target="_blank">
+                  Visit {title}
+                </a>
+              )}
+              {github && (
+                <a href={github} target="_blank">
+                  Source Code
+                </a>
+              )}
+            </div>
+          </div>
+        </motion.div>
+      )
+    );
   };
 
   useEffect(() => {
@@ -67,6 +75,17 @@ function Portfolio() {
 
   // useEffect(() => {
   // }, [category]);
+
+  // let hotel = myProjects.filter((project) => {
+  //   let cat = project?.category;
+  //   cat.filter((item) => {
+  //     // console.log(item.toLowerCase());
+  //     if (item.toLowerCase() === category) {
+  //       return item;
+  //     }
+  //   });
+  // });
+  // console.log(hotel);
 
   useEffect(() => {
     const options = { rootMargin: "-150px" };
@@ -94,7 +113,6 @@ function Portfolio() {
         if (!entry.isIntersecting) {
           return;
         }
-        console.log(entry);
         setVisible2(entry.isIntersecting);
       });
     }, options);
@@ -102,14 +120,14 @@ function Portfolio() {
     observer.observe(wrapper);
   }, [visible]);
 
-  // const preloadImg = (img) => {
-  //   const src = img.getAttribute("data-src");
+  const preloadImg = (img) => {
+    const src = img.getAttribute("data-src");
 
-  //   if (!src) {
-  //     return;
-  //   }
-  //   img.src = src;
-  // };
+    if (!src) {
+      return;
+    }
+    img.src = src;
+  };
 
   useEffect(() => {
     const options = { rootMargin: "-150px" };
@@ -121,22 +139,20 @@ function Portfolio() {
         if (!entry.isIntersecting) {
           return;
         }
-
-        console.log(entry);
         entry.target.classList.add("visible");
-        // const img = entry.target.querySelector(".front").childNodes[1];
-        // preloadImg(img);
+        const img = entry.target.querySelector(".front").childNodes[1];
+        preloadImg(img);
 
-        project.forEach((item) => {
-          observer.unobserve(item);
-        });
+        // project.forEach((item) => {
+        //   observer.unobserve(item);
+        // });
       });
     }, options);
 
     project.forEach((item) => {
       observer.observe(item);
     });
-  }, [projects]);
+  }, [projects, category]);
 
   const date = new Date();
   const hour = date.getHours();
@@ -151,15 +167,18 @@ function Portfolio() {
       const category = e.target.dataset.id;
       setCatergory(category);
 
-      const projectCategory = projects.filter((project) => {
+      // console.log(category);
+
+      const projectCategory = projects.map((project) => {
         if (project.categories === category) {
           if (project.categories === category) {
-            return project;
+            console.log(project);
           }
         }
       });
-      console.log("projectCategory", projectCategory);
-      setProjects(projectCategory);
+      return projectCategory;
+      // console.log("projectCategory", projectCategory);
+      // setProjects(projectCategory);
     });
   };
 
@@ -195,11 +214,24 @@ function Portfolio() {
         <div className="projects">
           {category === "all"
             ? displayProjects(myProjects)
-            : displayProjects(myProjects)}
+            : displayProjects(
+                myProjects.filter(
+                  (project) => project?.category.toLowerCase() === category
+                  //  {
+                  //   let cat = project?.category;
+                  //   cat.map((item) => {
+                  //     if (item.toLowerCase() === category) {
+                  //       return project;
+                  //     }
+                  //   });
+                  // }
+                )
+              )}
         </div>
       </div>
       <Optimize />
-      {/* <Design /> */}
+      {/* <Responsive /> */}
+      <Design />
     </section>
   );
 }
