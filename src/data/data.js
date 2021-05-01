@@ -10,6 +10,7 @@ import linked from "../assets/portfolio/linked-in.jpg";
 import luxuryAPIs from "../assets/portfolio/luxury-apis.jpg";
 import porfolioV1 from "../assets/portfolio/portfolio-v1.jpg";
 import porfolioV2 from "../assets/portfolio/porfolio-v2.jpg";
+import resort from "../assets/portfolio/beach-resort.jpg";
 
 import code from "../assets/icons/programming.svg";
 import design from "../assets/icons/vector-design.svg";
@@ -80,6 +81,19 @@ export const servicesData = [
 
 export const myProjects = [
   {
+    id: 54,
+    date: "2021-05-01",
+    title: "Resort Beach",
+    category: "Hotel",
+    tools: ["React Js, Context API"],
+    github: "https://github.com/blvck-code/resort-beach",
+    link: "https://oluoch-resort-beach.netlify.app/",
+    image: resort,
+    desc: `
+      Resort beach is a hotel website that enables one to filter rooms with desired room conitions and price.`,
+    latest: true,
+  },
+  {
     id: 53,
     date: "2020-04-19",
     title: "Luxury Silk Backend APIs",
@@ -106,7 +120,7 @@ export const myProjects = [
     latest: true,
   },
   {
-    id: 53,
+    id: 50,
     date: "2021-01-05",
     title: "Porfolio V2",
     category: "Portfolio",
