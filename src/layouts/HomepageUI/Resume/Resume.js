@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import RightTitle from "../../../utils/RightTitle/RightTitle";
 import Title from "../../../utils/Title/Title";
-import { motion } from "framer-motion";
 import "./style.css";
 
 function Resume() {
@@ -75,7 +73,7 @@ function Resume() {
       id: "04",
       date: "2016 - 2020",
       job: "Photographer",
-      firm: "Taita Taveta University.",
+      firm: "Taita Taveta Uni.",
       desc: `I was a photographer back in campus 
       which was my main hustle as a student.`,
     },
@@ -101,7 +99,7 @@ function Resume() {
         <>
           <Title
             theme="title"
-            title="Experience &amp; Education"
+            title="Relevant Experience"
             subtitle={`${expe}+ years of experience`}
             category="resume"
           />
@@ -121,7 +119,7 @@ function Resume() {
             <span />
             <h1 className="faded">{id}</h1>
             <h5>
-              {date} <small>({job})</small>
+              {date} <small> ({job})</small>
             </h5>
             <h2>{firm}</h2>
             <p>{desc}</p>

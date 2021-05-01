@@ -13,7 +13,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background: linear-gradient(135deg, #001, #000);
+  background: linear-gradient(135deg, #0e0218, #17161a) !important;
 }
 
 .count {

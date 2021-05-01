@@ -33,7 +33,9 @@
 }
 
 .optimize__title {
-  /* border: 1px solid red; */
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 3s ease-in;
 }
 
 .optimize__title h2 {
@@ -91,9 +93,18 @@
 }
 
 .optimize__info {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 2s ease-in;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
+}
+
+.optimize__title.visible,
+.optimize__info.visible {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .optimize__info svg {

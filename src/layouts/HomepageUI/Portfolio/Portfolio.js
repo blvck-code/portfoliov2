@@ -8,6 +8,7 @@ import Design from "./Design/Design";
 import { myProjects, categories } from "../../../data/data";
 import "./style.css";
 import Optimize from "./Optimize/Optimize";
+import porfolioV2 from "../../../assets/portfolio/porfolio-v2.jpg";
 
 function Portfolio() {
   const [visible, setVisible] = useState(false);
@@ -31,7 +32,7 @@ function Portfolio() {
           }}>
           <div className="front">
             {latest ? <span>New</span> : ""}
-            <img data-src={image} alt={title} />
+            <img src={image || porfolioV2} alt={title} />
             <small>{idx + 1}</small>
             {link ? (
               <a href={link} target="_blank">
@@ -230,7 +231,6 @@ function Portfolio() {
         </div>
       </div>
       <Optimize />
-      {/* <Responsive /> */}
       <Design />
     </section>
   );

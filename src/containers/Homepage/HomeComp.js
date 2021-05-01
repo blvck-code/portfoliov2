@@ -14,8 +14,6 @@ import { Switch, Link } from "react-router-dom";
 import { useLocation } from "react-use";
 import Footer from "../../component/Footer/Footer";
 import Socials from "../../utils/Socials/Socials";
-import Theme from "../../utils/Theme/Theme";
-import Email from "../../utils/Email/Email";
 import Scroll from "../../utils/Scroll/Scroll";
 
 function HomeComp() {
@@ -28,7 +26,6 @@ function HomeComp() {
     infOne: "I'm a developer based in Nairobi, Kenya specialized in",
     infTwo: "building (and occasionally designing) exceptional, high-quality",
     infThree: "websites and their backends.",
-    btn: "Get In Touch",
   };
 
   return (

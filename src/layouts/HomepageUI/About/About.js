@@ -104,7 +104,7 @@ function About() {
               <p className="about__intro">{aboutOne}</p>
               <p className="about__intro">{aboutTwo}</p>
               <p className="about__intro">
-                Shortly after my fourth year in{" "}
+                During my four years in{" "}
                 <a href="https://www.ttu.ac.ke/" target="_blank">
                   Taita Taveta University
                 </a>

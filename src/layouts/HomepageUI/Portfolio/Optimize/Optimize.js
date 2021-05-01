@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBolt, FaFileArchive } from "react-icons/fa";
 import "./style.css";
 
@@ -36,6 +36,46 @@ function Optimize() {
       title: "Less import of 3rd party libraries",
     },
   ];
+
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const options = { rootMargin: "-200px" };
+    const optimizeHead = document.querySelector(".optimize");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        setVisible(entry.isIntersecting);
+      });
+    }, options);
+
+    observer.observe(optimizeHead);
+  }, [visible]);
+
+  useEffect(() => {
+    const options = { rootMargin: "-150px" };
+    const optimizeWrapper = document.querySelectorAll(".optimize__wrapper");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        let children = entry.target.childNodes;
+        children.forEach((child) => {
+          child.classList.add("visible");
+        });
+        // setVisible2(entry.isIntersecting);
+      });
+    }, options);
+
+    optimizeWrapper.forEach((item) => {
+      observer.observe(item);
+    });
+  }, [visible]);
 
   return (
     <div className="optimize">

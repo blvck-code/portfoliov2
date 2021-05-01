@@ -13,7 +13,7 @@ function Contact() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    const options = { threshold: 0.2 };
+    const options = { rootMargin: "-200px" };
     const contact = document.querySelector("#contact");
 
     const observer = new IntersectionObserver((entries) => {
@@ -22,30 +22,34 @@ function Contact() {
           return;
         }
         setVisible(entry.isIntersecting);
-        observer.unobserve(entry.target);
       });
     }, options);
 
     observer.observe(contact);
   }, [visible]);
 
-  const contacts = [
-    {
-      icon: <i className="fa fa-map-marker" />,
-      title: "address line",
-      contact: ["1300 Kalulu, Siaya 40600"],
-    },
-    {
-      icon: <i className="fa fa-phone" />,
-      title: "phone",
-      contact: ["+25495772333"],
-    },
-    {
-      icon: <i className="fa fa-envelope-open-o" />,
-      title: "email",
-      contact: ["brianmauriceoluoch@gmail.com"],
-    },
-  ];
+  useEffect(() => {
+    const options = { rootMargin: "-200px" };
+    const contactWrapper = document.querySelectorAll(".contact__wrapper");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        let form = entry.target.childNodes;
+        console.log(form);
+        form.forEach((child) => {
+          child.classList.add("visible");
+        });
+        // setVisible2(entry.isIntersecting);
+      });
+    }, options);
+
+    contactWrapper.forEach((item) => {
+      observer.observe(item);
+    });
+  }, [visible]);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -54,13 +58,16 @@ function Contact() {
 
   return (
     <section id="contact" className="contact">
-      {/* <RightTitle title="contact" /> */}
-      <Title
-        theme="title"
-        category="contact"
-        title="Get in touch today"
-        subtitle="feel free to contact me any time"
-      />
+      {visible && (
+        <>
+          <Title
+            theme="title"
+            category="contact"
+            title="Get in touch today"
+            subtitle="feel free to contact me any time"
+          />
+        </>
+      )}
       <div className="contact__wrapper">
         <form onSubmit={(e) => onSubmit(e)} className="contact__form">
           <div className="form__group">

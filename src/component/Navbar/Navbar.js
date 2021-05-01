@@ -78,7 +78,36 @@ function Navbar({ open, setOpen }) {
             </Link>
           </motion.div>
 
-          <ul className="nav-menu">
+          <div className="nav-menu">
+            <div className="menu-btn">
+              <span className="line-btn"></span>
+              <span className="line-btn"></span>
+              <span className="line-btn"></span>
+            </div>
+            <ul className="nav-items">
+              <li>
+                <a className="nav-item" href="#about">
+                  <span className="text-secondary">01.</span>About
+                </a>
+              </li>
+              <li>
+                <a className="nav-item" href="#experience">
+                  <span className="text-secondary">02.</span>Experience
+                </a>
+              </li>
+              <li>
+                <a className="nav-item" href="#work">
+                  <span className="text-secondary">03.</span>Work
+                </a>
+              </li>
+              <li>
+                <a className="nav-item" href="#contact">
+                  <span className="text-secondary">04.</span>Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          {/* <ul className="nav-menu">
             <li>
               <a className="nav-link" href="#showcase">
                 Home
@@ -109,7 +138,7 @@ function Navbar({ open, setOpen }) {
                 Contact
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </motion.div>
     </nav>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaAdobe,
   FaFigma,
@@ -16,6 +16,47 @@ function Design() {
     { icon: <FaSlidersH />, title: "highly adjustable website layouts" },
     { icon: <FaCode />, title: "hude shortcode collection" },
   ];
+
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const options = { rootMargin: "-200px" };
+    const design = document.querySelector(".design");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        setVisible(entry.isIntersecting);
+      });
+    }, options);
+
+    observer.observe(design);
+  }, [visible]);
+
+  useEffect(() => {
+    const options = { rootMargin: "-150px" };
+    const designWrapper = document.querySelectorAll(".design__wrapper");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        let children = entry.target.childNodes;
+        children.forEach((child) => {
+          child.classList.add("visible");
+        });
+        // setVisible2(entry.isIntersecting);
+      });
+    }, options);
+
+    designWrapper.forEach((item) => {
+      observer.observe(item);
+    });
+  }, [visible]);
+
   return (
     <div className="design">
       <div className="design__wrapper">

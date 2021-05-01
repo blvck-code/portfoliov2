@@ -43,6 +43,22 @@
 .design__content {
   color: #221c33 !important;
   flex: 1;
+  opacity: 0;
+  transition: all 2s ease-in;
+}
+
+.design__title {
+  transform: translateX(-100%);
+}
+
+.design__content {
+  transform: translateX(100%);
+}
+
+.design__title.visible,
+.design__content.visible {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .design__title h5 {

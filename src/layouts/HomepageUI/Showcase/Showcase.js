@@ -4,7 +4,8 @@ import "./style.css";
 import { useHistory } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
 import styled from "styled-components";
-import img from "../../../assets/imgs/oluoch.jpg";
+import cv from "../../../assets/Oluoch_Maurice_Resume.pdf";
+import { FiDownload } from "react-icons/fi";
 
 function Showcase({ open, header }) {
   const showcase = document.getElementById("showcase");
@@ -62,11 +63,11 @@ function Showcase({ open, header }) {
             <br /> {infThree}
           </motion.p>
           <motion.a
-            href="#contact"
+            href={cv}
             initial={{ x: "-100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 2.5 }}>
-            {btn}
+            Download CV <i className="fa fa-download" />
           </motion.a>
         </div>
       )}
