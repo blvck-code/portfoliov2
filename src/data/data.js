@@ -7,10 +7,18 @@ import bloggerSite from "../assets/portfolio/blogger-site.jpg";
 import covidTracker from "../assets/portfolio/covid-tracker.jpg";
 import devconnector from "../assets/portfolio/devconnector.jpg";
 import linked from "../assets/portfolio/linked-in.jpg";
+import linkedApi from "../assets/portfolio/linkedApi.jpg";
 import luxuryAPIs from "../assets/portfolio/luxury-apis.jpg";
 import porfolioV1 from "../assets/portfolio/portfolio-v1.jpg";
 import porfolioV2 from "../assets/portfolio/porfolio-v2.jpg";
 import resort from "../assets/portfolio/beach-resort.jpg";
+import appilicious from "../assets/portfolio/appilicious.jpg";
+import contacts from "../assets/portfolio/contacts.jpg";
+import contactsApi from "../assets/portfolio/contacts-api.jpg";
+import discovery from "../assets/portfolio/discovery.jpg";
+import loruki from "../assets/portfolio/loruki.jpg";
+import netflix from "../assets/portfolio/netflix.jpg";
+import acme from "../assets/portfolio/acme.jpg";
 
 import code from "../assets/icons/programming.svg";
 import design from "../assets/icons/vector-design.svg";
@@ -133,6 +141,19 @@ export const myProjects = [
     latest: true,
   },
   {
+    id: 1,
+    date: "2020-09-02",
+    title: "Portfolio",
+    category: "Portfolio",
+    tools: ["React Hook, Django, SCSS, Redux, API"],
+    github: "https://github.com/blvck-code/portfolio-frontend-v1--",
+    link: "https://brianoluoch.netlify.app/",
+    image: porfolioV1,
+    desc:
+      "This is my personal portfolio that i built from scratch and customized the UI without any CSS framework. This is is built using both react and django, the frontend fetchs data(projects) from backend which is hosted in heroku.",
+    latest: false,
+  },
+  {
     id: 51,
     date: "2020-11-03",
     title: "Loruki | Cloud Hosting Website",
@@ -140,7 +161,7 @@ export const myProjects = [
     tools: ["HTML, CSS"],
     github: "https://github.com/blvck-code/loruki-website",
     link: "https://oluoch-loruki.netlify.app/",
-    image: null,
+    image: loruki,
     desc:
       "Loruki Cloud Hosting Website is a clone of Heroku UI with a different name and Interface.",
     latest: false,
@@ -156,7 +177,7 @@ export const myProjects = [
     image: covidTracker,
     desc:
       "Covid Tracker is a website that tracks the latest covid cases world wide. This website fetch external API and designs the data to a form that user can understand.",
-    latest: true,
+    latest: false,
   },
   {
     id: 49,
@@ -166,7 +187,7 @@ export const myProjects = [
     tools: ["HTML, SCSS"],
     github: "https://github.com/blvck-code/responsive-site",
     link: "https://oluoch-applicious.netlify.app",
-    image: null,
+    image: appilicious,
     desc:
       "Applicious is a responsive website i was trying to come up with to help me advance my skills in CSS and responsive.",
     latest: false,
@@ -182,7 +203,7 @@ export const myProjects = [
     image: linked,
     desc:
       "This is a clone of linked in that allows user to create a post, create profile, add experience and education background. This project is still under production.",
-    latest: true,
+    latest: false,
   },
   {
     id: 50,
@@ -195,7 +216,7 @@ export const myProjects = [
     image: bloggerSite,
     desc:
       "Blogger Website is a demo for how most blog website looks like. This is a single page website with designs and tone for most modern websites.",
-    latest: true,
+    latest: false,
   },
   {
     id: 14,
@@ -205,10 +226,10 @@ export const myProjects = [
     tools: ["React Hook, Redux, SCSS, Redux, API"],
     github: "https://github.com/blvck-code/Contacts-API-frontend",
     link: "https://thecontacts.netlify.app/",
-    image: null,
+    image: contacts,
     desc:
       "This is contact book project where users can add contacts, delete & update.",
-    latest: true,
+    latest: false,
   },
   {
     id: 6,
@@ -218,7 +239,7 @@ export const myProjects = [
     tools: ["Django,  API, Django RestFramework"],
     github: "https://github.com/blvck-code/Contacts-API-backend",
     link: "https://contacts-api-backend.herokuapp.com/",
-    image: null,
+    image: contactsApi,
     desc:
       "This is the backend APIs to my ongoing project. The backend holds the APIs that the frontend will fetch data from. This project is hosted on heroku.",
     latest: false,
@@ -244,7 +265,7 @@ export const myProjects = [
     tools: ["HTML, SCSS"],
     github: "https://github.com/blvck-code/Discovery-Channel-Homepage",
     link: "https://discovery-channel.netlify.app/",
-    image: null,
+    image: discovery,
     desc:
       "This is a UX/UI Design for the Discovery Channel Homepage. The page is made with HTM & CSS only.",
     latest: false,
@@ -270,49 +291,10 @@ export const myProjects = [
     tools: ["Django,  API, Django RestFramework"],
     github: "https://github.com/blvck-code/linked-in-backend",
     link: "https://oluoch-linkedin.herokuapp.com/",
-    image: null,
+    image: linkedApi,
     desc:
       "Backend APIs to linked in clone. This backend project is hosted on heroku platform.",
     latest: false,
-  },
-  {
-    id: 8,
-    date: "2020-09-15",
-    title: "Leads Manager Frontend",
-    category: "Fullstack",
-    tools: ["React Hook, Bootstrap, Redux"],
-    github: "https://github.com/blvck-code/leads-manager-UI",
-    link: "https://leads-manager.netlify.app",
-    image: null,
-    desc:
-      "Leads manager allows users to create account, create and delete leads, and every user can only see their leads.",
-    latest: false,
-  },
-  {
-    id: 7,
-    date: "2020-09-08",
-    title: "Leads Manager Backend",
-    category: "Backend",
-    tools: ["Django,  API, Django RestFramework"],
-    github: null,
-    link: "https://leads-manager-backend.herokuapp.com/",
-    image: null,
-    desc:
-      "Backend APIS to Leads Manager. This backend is hosted on heroku where the frontend will be fetching API requests from.",
-    latest: false,
-  },
-  {
-    id: 1,
-    date: "2020-09-02",
-    title: "Portfolio",
-    category: "Portfolio",
-    tools: ["React Hook, Django, SCSS, Redux, API"],
-    github: "https://github.com/blvck-code/portfolio-frontend-v1--",
-    link: "https://brianoluoch.netlify.app/",
-    image: porfolioV1,
-    desc:
-      "This is my personal portfolio that i built from scratch and customized the UI without any CSS framework. This is is built using both react and django, the frontend fetchs data(projects) from backend which is hosted in heroku.",
-    latest: true,
   },
   {
     id: 10,
@@ -322,7 +304,7 @@ export const myProjects = [
     tools: ["HTML, SCSS, JavaScript"],
     github: "https://github.com/blvck-code/Netflix-Clone",
     link: "https://netflix-clonee.netlify.app/",
-    image: null,
+    image: netflix,
     desc:
       "This is a clone to Netflix homepage. I also love their simple designs and always want to try clone it.",
     latest: false,
@@ -335,7 +317,7 @@ export const myProjects = [
     tools: ["HTML, SCSS, Bootstrap"],
     github: "https://github.com/blvck-code/Acme-Web-Design",
     link: "https://acmee.netlify.app/",
-    image: null,
+    image: acme,
     desc:
       "This is a website built during course study with Traversy Media. This site helped to equip me with botstrap skills.",
     latest: false,
