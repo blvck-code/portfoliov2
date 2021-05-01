@@ -147,7 +147,7 @@ export const myProjects = [
     category: "Portfolio",
     tools: ["React Hook, Django, SCSS, Redux, API"],
     github: "https://github.com/blvck-code/portfolio-frontend-v1--",
-    link: "https://brianoluoch.netlify.app/",
+    link: "https://oluochbrian.netlify.app",
     image: porfolioV1,
     desc:
       "This is my personal portfolio that i built from scratch and customized the UI without any CSS framework. This is is built using both react and django, the frontend fetchs data(projects) from backend which is hosted in heroku.",
